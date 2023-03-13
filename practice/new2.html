@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag And Drop</title>
+    <style>
+        span{
+            background-color: rgb(149, 31, 8);
+            padding: 18px;
+        }
+    </style>
+</head>
+<body>
+    <span style="position: absolute;top: 100px; left: 50px;">Abhishek</span>
+    <span style="position: absolute;top: 100px; left: 170px;">Kaushal</span>
+    <span style="position: absolute;top: 100px; left: 300px;">Sandeep</span>
+    <script>
+        let element;
+        const spanElements= document.querySelectorAll("span");
+        for(el of spanElements){
+            
+            el.addEventListener("mousedown", move,true);
+        }
+        function move(event){
+            element=event.currentTarget;
+            document.addEventListener("mousemove",mover,true);
+            document.addEventListener("mouseup",drop,true);
+        }
+        function mover(event){
+            element.style.left=event.clientX +"px";
+            element.style.top=event.clientY +"px";
+        }
+        function drop(event){
+            document.removeEventListener("mousemove",mover,true);
+            docuemnt.removeEventListener("mouseup",drop,true);
+        }
+    </script>
+</body>
+</html>
