@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate Using JS</title>
+</head>
+<body>
+    <div>
+        <form action="" onsubmit="return validateform()">
+            <div>
+                Email:<input type="email" id="email">
+            </div>
+            <div>
+                Password:<input type="password" id="password">
+            </div>
+            <div>
+                <input type="submit" value="Log IN" id="login">
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        var email=document.getElementById("email").value;
+        var password=document.getElementById("password").value;
+        function validateform(event){
+            if(email==""){
+                alert("Please enter your email!");
+                return false;
+            }
+            else if(password=""){
+                alert("Please eneter your password!");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

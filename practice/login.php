@@ -50,7 +50,8 @@
              mysqli_stmt_bind_param($stmt,"sss", $email, $passwordHash);
              mysqli_stmt_execute($stmt);
              echo "<div class='alert alert-success'>You are login successfully.</div>";
-         }else{
+         }
+         else{
              die("Something went wrong");
          }
         }
